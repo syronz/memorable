@@ -1,1 +1,3 @@
 # Memorable
+
+Generate simple codes 
