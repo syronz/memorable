@@ -1,3 +1,3 @@
-module github.com/syronz/memorable2
+module github.com/syronz/memorable
 
 go 1.13
