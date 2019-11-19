@@ -21,7 +21,7 @@ func InternalPackageRandom() int {
 	// return rnd
 }
 
-// RandomInRangeBuilder use Builder desgin pattern for generating random number
+// RandomInRangeBuilder use Builder design pattern for generating random number
 func RandomInRangeBuilder(min, max int) int {
 	randEngine := random.New().SetMin(min).SetMax(max).Build()
 	return randEngine.Generate()

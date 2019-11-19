@@ -12,3 +12,5 @@ replace github.com/syronz/memorable => /path/to/the/package
 
 ```
 
+Use Builder design pattern, get helps from https://gist.github.com/vaskoz/10073335
+
