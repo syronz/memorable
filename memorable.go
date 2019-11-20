@@ -1,6 +1,8 @@
 package memorable
 
 import (
+	"fmt"
+	"github.com/syronz/memorable/internal"
 	"github.com/syronz/memorable/random"
 )
 
@@ -25,4 +27,14 @@ func InternalPackageRandom() int {
 func RandomInRangeBuilder(min, max int) int {
 	randEngine := random.New().SetMin(min).SetMax(max).Build()
 	return randEngine.Generate()
+}
+
+// GetList is for testing builder pattern for internal of application
+func GetList() string {
+	mem := internal.New().Chars("ABC").Length(15).Build()
+	obj := mem.Return()
+	fmt.Printf(">>>>>>>> %+v", obj)
+
+	return mem.ShowChars()
+
 }

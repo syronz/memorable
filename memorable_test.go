@@ -41,3 +41,8 @@ func TestInternalPackageRandom(t *testing.T) {
 	result := InternalPackageRandom()
 	t.Log("Result is: ", result)
 }
+
+func TestGetList(t *testing.T) {
+	result := GetList()
+	t.Log("List is: ", result)
+}
