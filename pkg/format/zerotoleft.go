@@ -3,33 +3,36 @@ package format
 import (
 	"errors"
 	"fmt"
-	"strconv"
 )
 
 // AddZeroToLeft fill left side of number with 0
 func AddZeroToLeft(num interface{}, length int) (result string, err error) {
-	if length > 35 {
-		err = errors.New("Maximum length is 35")
+	if length > 35 || length < 0 {
+		err = errors.New("Length should be in this range 0-35")
 		return
 	}
 
-	var n uint64
+	var n string
 
 	switch num.(type) {
 	case int:
-		n = uint64(num.(int))
+		n = fmt.Sprint(num.(int))
 	case uint64:
-		n = num.(uint64)
+		n = fmt.Sprint(num.(uint64))
 	case string:
-		n, err = strconv.ParseUint(num.(string), 10, 64)
+		n = num.(string)
+	default:
+		err = errors.New("Number must be int, uint64 or string")
+		return
 	}
+
+	str := "00000000000000000000000000000000000"
+	str += fmt.Sprint(n)
+	result = str[len(str)-length:]
 
 	if err != nil {
 		return
 	}
 
-	fmt.Printf("%T - %v", n, n)
-
-	result = "OK"
 	return
 }
