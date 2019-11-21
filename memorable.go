@@ -31,9 +31,10 @@ func RandomInRangeBuilder(min, max int) int {
 
 // GetList is for testing builder pattern for internal of application
 func GetList() string {
-	mem := internal.New().Chars("ABC").Length(15).Build()
+	mem := internal.New().Chars("AB").Length(4).Build()
 	obj := mem.Return()
-	fmt.Printf(">>>>>>>> %+v", obj)
+	gen := mem.Generate()
+	fmt.Printf(">>>>>>>> %+v |||||||| %+v\n", obj, gen)
 
 	return mem.ShowChars()
 

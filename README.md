@@ -14,4 +14,6 @@ replace github.com/syronz/memorable => /path/to/the/package
 
 Use Builder design pattern, get helps from https://gist.github.com/vaskoz/10073335
 
-TODO: go test ./pkg/format  -v --run TestAddZeroToLeft
+[x] TODO: go test ./pkg/format  -v --run TestAddZeroToLeft
+
+[ ] TODO: complete replaceChars with anonymous functions on it
