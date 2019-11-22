@@ -28,7 +28,7 @@ func (c code) Variation() (mems []memCode) {
 	mems = make([]memCode, c.max+1)
 
 	for i := uint64(0); i <= c.max; i++ {
-		filledCode, _ := format.AddZeroToLeft(strconv.FormatUint(uint64(i), c.base), int(c.length))
+		filledCode := format.ConvertorZeroFill(i, c.base, c.length)
 		swappedCode := swapper(filledCode)
 
 		mems[i] = memCode{

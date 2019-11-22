@@ -3,6 +3,7 @@ package format
 import (
 	"errors"
 	"fmt"
+	"strconv"
 )
 
 // AddZeroToLeft fill left side of number with 0
@@ -26,5 +27,11 @@ func AddZeroToLeft(num interface{}, length int) (result string, err error) {
 	str += fmt.Sprint(n)
 	result = str[len(str)-length:]
 
+	return
+}
+
+// ConvertorZeroFill use AddZeroToLeft and FormatUint to convert number to requested base
+func ConvertorZeroFill(num uint64, base, length int) (result string) {
+	result, _ = AddZeroToLeft(strconv.FormatUint(uint64(num), base), int(length))
 	return
 }

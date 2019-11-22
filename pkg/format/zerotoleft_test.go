@@ -30,7 +30,7 @@ func TestAddZeroToLeft(t *testing.T) {
 			errMsg := v.err.(string)
 			if err.Error() != errMsg {
 				t.Errorf(
-					" AddZeroToLeft(%v, %v) should return error, returned error is %q which should be %q",
+					"AddZeroToLeft(%v, %v) should return error, returned error is %q which should be %q",
 					v.num, v.length, err.Error(), errMsg)
 			}
 		} else {
@@ -39,4 +39,24 @@ func TestAddZeroToLeft(t *testing.T) {
 			}
 		}
 	}
+}
+
+func TestConvertorZeroFill(t *testing.T) {
+	samples := []struct {
+		num    uint64
+		base   int
+		length int
+		result string
+	}{
+		{3, 2, 5, "00011"},
+	}
+
+	for _, v := range samples {
+		r := ConvertorZeroFill(v.num, v.base, v.length)
+		if r != v.result {
+			t.Errorf("ConvertorZeroFill(%v, %v, %v) = %q, which is should be %q",
+				v.num, v.base, v.length, r, v.result)
+		}
+	}
+
 }
