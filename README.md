@@ -2,6 +2,7 @@
 
 [![BuildStatus](https://api.travis-ci.org/syronz/memorable.svg?branch=master)](http://travis-ci.org/syronz/memorable) 
 [![ReportCard](https://goreportcard.com/badge/github.com/syronz/memorable)](https://goreportcard.com/report/github.com/syronz/memorable) 
+[![codecov](https://codecov.io/gh/syronz/memorable/branch/master/graph/badge.svg)](https://codecov.io/gh/syronz/memorable)
 [![MIT license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
 Memorable is a golang package for generate simple codes and sorting them from simplest to
