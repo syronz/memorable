@@ -1,4 +1,4 @@
-package internal
+package memorable
 
 import (
 	"fmt"
@@ -9,10 +9,9 @@ import (
 
 // Code is an interface for creating memorable code
 type Code interface {
-	Pong() string
-	ShowChars() string
 	Return() Code
 	Generate() []memCode
+	Variation() []memCode
 }
 
 type code struct {
@@ -27,29 +26,24 @@ type memCode struct {
 	Mark uint64
 }
 
-func (c code) Pong() string {
-	return "ping"
-}
-
-func (c code) ShowChars() string {
-	return c.characters
-}
-
 func (c code) Return() Code {
 	return c
 }
 
 func (c code) Variation() (mems []memCode) {
+	swapper := c.replaceChars()
+	_ = swapper
+	mems = make([]memCode, c.max+1)
 
 	for i := uint64(0); i <= c.max; i++ {
 		filledCode, _ := format.AddZeroToLeft(strconv.FormatUint(uint64(i), c.base), int(c.length))
-		_ = replaceChars(filledCode, c.characters)
+		swappedCode := swapper(filledCode)
+
 		mem := memCode{
-			Code: filledCode,
+			Code: swappedCode,
 			Mark: i + 1,
 		}
-		mems = append(mems, mem)
-
+		mems[i] = mem
 	}
 
 	return
@@ -61,10 +55,21 @@ func (c code) Generate() (mems []memCode) {
 	return
 }
 
-func replaceChars(filledCode string, chars string) (replacedCode string) {
-	replacedCode = "kkkk"
-	charMap := make(map[string]string)
-	for i:=0; i < 
-	fmt.Println("###########$$$$$$$$$$$ ", chars)
-	return
+func (c code) replaceChars() func(string) string {
+	charMap := make(map[string]rune)
+	for i := 0; i < c.base; i++ {
+		charBase := strconv.FormatUint(uint64(i), c.base)
+		charMap[charBase] = rune(c.characters[i])
+		fmt.Println(charBase)
+	}
+
+	return func(filledCode string) string {
+		str := []rune(filledCode)
+
+		for i, v := range filledCode {
+			str[i] = charMap[string(v)]
+		}
+
+		return string(str)
+	}
 }
