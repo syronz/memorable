@@ -1,4 +1,4 @@
-#TODO
+# TODO
 
 - [x] go test ./pkg/format  -v --run TestAddZeroToLeft
 - [x] complete replaceChars with anonymous functions on it

@@ -1,9 +1,12 @@
 # Memorable
 
-[![BuildStatus](https://api.travis-ci.org/syronz/memorable.svg?branch=master)](http://travis-ci.org/syronz/memorable) [![ReportCard](https://goreportcard.com/badge/github.com/syronz/memorable)](https://goreportcard.com/report/github.com/syronz/memorable) 
+[![BuildStatus](https://api.travis-ci.org/syronz/memorable.svg?branch=master)](http://travis-ci.org/syronz/memorable) 
+[![ReportCard](https://goreportcard.com/badge/github.com/syronz/memorable)](https://goreportcard.com/report/github.com/syronz/memorable) 
+[![MIT license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
 Memorable is a golang package for generate simple codes and sorting them from simplest to
-complicated. It can also generate variation for specific range of characters
+complicated. It can also generate variation for specific range of characters.
+Use Builder design pattern, inspired by https://gist.github.com/vaskoz/10073335
 
 ### Usage
 Generate variation of listed chars
@@ -48,7 +51,6 @@ replace github.com/syronz/memorable => /path/to/the/package
 
 ```
 
-Use Builder design pattern, inspired by https://gist.github.com/vaskoz/10073335
 
 License
 ----
