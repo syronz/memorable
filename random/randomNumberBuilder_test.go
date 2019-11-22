@@ -10,6 +10,6 @@ func TestRandomNumberBuilder(t *testing.T) {
 	randEngine := New().SetMin(10).SetMax(100).Build()
 	randNum := randEngine.Generate()
 
-	t.Log(">>>>> ", randNum)
+	t.Log("Random Number: ", randNum)
 
 }

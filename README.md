@@ -1,5 +1,7 @@
 # Memorable
 
+[![Build Status](https://api.travis-ci.org/syronz/memorable.svg?branch=master)](http://travis-ci.org/syronz/memorable)
+
 Generate simple codes 
 
 ### It can be used inside accounting applications

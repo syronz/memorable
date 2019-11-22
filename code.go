@@ -1,10 +1,8 @@
 package memorable
 
 import (
-	"fmt"
-	"strconv"
-
 	"github.com/syronz/memorable/pkg/format"
+	"strconv"
 )
 
 // Code is an interface for creating memorable code
@@ -60,7 +58,6 @@ func (c code) replaceChars() func(string) string {
 	for i := 0; i < c.base; i++ {
 		charBase := strconv.FormatUint(uint64(i), c.base)
 		charMap[charBase] = rune(c.characters[i])
-		fmt.Println(charBase)
 	}
 
 	return func(filledCode string) string {
