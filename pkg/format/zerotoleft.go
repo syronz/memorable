@@ -30,9 +30,5 @@ func AddZeroToLeft(num interface{}, length int) (result string, err error) {
 	str += fmt.Sprint(n)
 	result = str[len(str)-length:]
 
-	if err != nil {
-		return
-	}
-
 	return
 }

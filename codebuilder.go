@@ -8,13 +8,13 @@ import (
 // CodeBuilder build the code
 type CodeBuilder interface {
 	Chars(string) CodeBuilder
-	Length(uint8) CodeBuilder
+	Length(int) CodeBuilder
 	Build() (Code, error)
 }
 
 type codeBuilder struct {
 	characters string
-	length     uint8
+	length     int
 	base       int
 	maxInBase  string
 	maxInDec   uint64
@@ -27,24 +27,24 @@ func (c codeBuilder) Chars(chars string) CodeBuilder {
 	return c
 }
 
-func (c codeBuilder) Length(length uint8) CodeBuilder {
+func (c codeBuilder) Length(length int) CodeBuilder {
 	c.length = length
 	return c
 }
 
 func (c codeBuilder) Build() (createdCode Code, err error) {
 	if c.length > 35 || c.length < 0 {
-		err = errors.New("Length should be in this range 0-35")
+		err = errors.New("Length should be in the range 0 to 35")
 		return
 	}
 
 	if len(c.characters) < 2 || len(c.characters) > 36 {
-		err = errors.New("Number of chars should be in this range 2-36")
+		err = errors.New("Number of chars should be in the range 2 to 36")
 		return
 	}
 
 	baseStr := strconv.FormatUint(uint64(c.base-1), c.base)
-	for i := uint8(0); i < c.length; i++ {
+	for i := int(0); i < c.length; i++ {
 		c.maxInBase += baseStr
 	}
 

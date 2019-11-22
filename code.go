@@ -7,14 +7,13 @@ import (
 
 // Code is an interface for creating memorable code
 type Code interface {
-	Return() Code
 	Generate() []memCode
 	Variation() []memCode
 }
 
 type code struct {
 	characters string
-	length     uint8
+	length     int
 	max        uint64
 	base       int
 }
@@ -22,10 +21,6 @@ type code struct {
 type memCode struct {
 	Code string
 	Mark uint64
-}
-
-func (c code) Return() Code {
-	return c
 }
 
 func (c code) Variation() (mems []memCode) {
