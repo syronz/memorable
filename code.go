@@ -25,7 +25,6 @@ type memCode struct {
 
 func (c code) Variation() (mems []memCode) {
 	swapper := c.replaceChars()
-	_ = swapper
 	mems = make([]memCode, c.max+1)
 
 	for i := uint64(0); i <= c.max; i++ {
