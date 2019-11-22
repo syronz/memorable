@@ -1,14 +1,4 @@
 mode: atomic
-github.com/syronz/memorable/codebuilder.go:24.54,28.2 3 1
-github.com/syronz/memorable/codebuilder.go:30.55,33.2 2 1
-github.com/syronz/memorable/codebuilder.go:35.60,36.35 1 1
-github.com/syronz/memorable/codebuilder.go:41.2,41.53 1 1
-github.com/syronz/memorable/codebuilder.go:46.2,47.39 2 1
-github.com/syronz/memorable/codebuilder.go:51.2,60.8 3 1
-github.com/syronz/memorable/codebuilder.go:36.35,39.3 2 0
-github.com/syronz/memorable/codebuilder.go:41.53,44.3 2 0
-github.com/syronz/memorable/codebuilder.go:47.39,49.3 1 2
-github.com/syronz/memorable/new.go:4.24,6.2 1 1
 github.com/syronz/memorable/code.go:27.29,29.2 1 0
 github.com/syronz/memorable/code.go:31.44,36.38 4 1
 github.com/syronz/memorable/code.go:47.2,47.8 1 1
@@ -20,3 +10,13 @@ github.com/syronz/memorable/code.go:58.30,61.3 2 2
 github.com/syronz/memorable/code.go:63.40,66.32 2 4
 github.com/syronz/memorable/code.go:70.3,70.21 1 4
 github.com/syronz/memorable/code.go:66.32,68.4 1 8
+github.com/syronz/memorable/codebuilder.go:24.54,28.2 3 1
+github.com/syronz/memorable/codebuilder.go:30.55,33.2 2 1
+github.com/syronz/memorable/codebuilder.go:35.60,36.35 1 1
+github.com/syronz/memorable/codebuilder.go:41.2,41.53 1 1
+github.com/syronz/memorable/codebuilder.go:46.2,47.39 2 1
+github.com/syronz/memorable/codebuilder.go:51.2,60.8 3 1
+github.com/syronz/memorable/codebuilder.go:36.35,39.3 2 0
+github.com/syronz/memorable/codebuilder.go:41.53,44.3 2 0
+github.com/syronz/memorable/codebuilder.go:47.39,49.3 1 2
+github.com/syronz/memorable/new.go:4.24,6.2 1 1
