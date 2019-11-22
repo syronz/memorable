@@ -14,13 +14,9 @@ func AddZeroToLeft(num interface{}, length int) (result string, err error) {
 
 	var n string
 
-	switch num.(type) {
-	case int:
-		n = fmt.Sprint(num.(int))
-	case uint64:
-		n = fmt.Sprint(num.(uint64))
-	case string:
-		n = num.(string)
+	switch v := num.(type) {
+	case int, uint64, string:
+		n = fmt.Sprint(v)
 	default:
 		err = errors.New("Number must be int, uint64 or string")
 		return

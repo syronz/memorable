@@ -31,11 +31,10 @@ func (c code) Variation() (mems []memCode) {
 		filledCode, _ := format.AddZeroToLeft(strconv.FormatUint(uint64(i), c.base), int(c.length))
 		swappedCode := swapper(filledCode)
 
-		mem := memCode{
+		mems[i] = memCode{
 			Code: swappedCode,
 			Mark: i + 1,
 		}
-		mems[i] = mem
 	}
 
 	return
