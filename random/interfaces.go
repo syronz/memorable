@@ -1,15 +1,18 @@
 package random
 
-type RandomNumber interface {
+// Number is an interface for generating new number
+type Number interface {
 	Generate() int
 }
 
-type RandomNumberBuilder interface {
-	SetMin(int) RandomNumberBuilder
-	SetMax(int) RandomNumberBuilder
-	Build() RandomNumber
+// NumberBuilder is used for building RandomNumber
+type NumberBuilder interface {
+	SetMin(int) NumberBuilder
+	SetMax(int) NumberBuilder
+	Build() Number
 }
 
-func New() RandomNumberBuilder {
+// New return back an instance of RandomNumberBuilder
+func New() NumberBuilder {
 	return &randomNumberBuilder{}
 }
